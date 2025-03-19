@@ -1,0 +1,10 @@
+{% for pro in prod %}
+{{pro.name}}
+{{pro.price}}
+{{pro.description}}
+{% endfor %}
+
+<div>
+    {{form.as_p}}
+    <input type="submit" value="Add to cart">
+</div>

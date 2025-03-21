@@ -1,0 +1,7 @@
+<!-- update product,html -->
+ <h2>Update Product </h2>
+ <form method="post">
+    {% csrf_token%}
+    {{form.as_p}}  <!-- Render the form field -->
+    <button type="submit">Save Changes</button>
+ </form>

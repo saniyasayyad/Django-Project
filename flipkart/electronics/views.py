@@ -10,10 +10,17 @@ def product_detail(request):
     prod = Product.objects.all()
     form = ProductForm()
     if request.method == 'POST':
+<<<<<<< HEAD
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             
+=======
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = ProductForm()
+>>>>>>> aee1c01f7da304bc88bb1521251d8b687b9a59a6
     return render(request, 'electronics/product_detail.html', {"prod":prod, 'form':form})
 
 def delete_product(request, id):
@@ -25,7 +32,11 @@ def update_product(request, id):
         prod = get_object_or_404(Product, id=id)
 
         if request.method == 'POST':
+<<<<<<< HEAD
             form = ProductForm(request.POST, request.FILES, instance=prod)
+=======
+            form = ProductForm(request.POST, instance=prod)
+>>>>>>> aee1c01f7da304bc88bb1521251d8b687b9a59a6
             if form.is_valid():
                 form.save()
                 return redirect('product_detail')

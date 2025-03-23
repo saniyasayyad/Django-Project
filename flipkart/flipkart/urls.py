@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+<<<<<<< HEAD
 from django.conf import settings
 from django.conf.urls.static import static
 from electronics import views
@@ -29,3 +30,15 @@ urlpatterns = [
 # Serve media files during development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+=======
+from django.contrib import admin
+from django.urls import path, include
+from electronics import views
+
+
+urlpatterns = [
+     path('admin/', admin.site.urls),
+    path('', views.home, name='home.html'),
+    path('electronics/', include('electronics.urls')),
+]
+>>>>>>> aee1c01f7da304bc88bb1521251d8b687b9a59a6
